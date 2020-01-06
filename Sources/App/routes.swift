@@ -14,7 +14,11 @@ public func routes(_ router: Router) throws {
     router.get("todos",use: todoController.index)
 
     router.post("todos", use: todoController.create)
-
+    router.post("todos", Todo.parameter , "update", use: todoController.update)
+    router.get("helloleaf"){ req -> Future<View> in
+        return try req.view().render("home",["name":"Leaf"])
+        
+    }
   
     
 }

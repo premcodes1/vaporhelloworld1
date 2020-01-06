@@ -1,0 +1,14 @@
+Hello, #(name)!
+
+<html>
+<head></head>
+<body>
+</br>
+Please enter Id and Title
+<form method="POST" action="/todos">
+  Id:    <input type="text" name="id"><br>
+  Title: <input type="text" name="title"><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
