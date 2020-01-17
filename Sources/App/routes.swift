@@ -11,14 +11,17 @@ public func routes(_ router: Router) throws {
         return "hello1"
     }
     let todoController = TodoController()
-    router.get("todos",use: todoController.index)
-
+   // router.get("todos",use: todoController.index)
+    router.get("todos",Int.parameter,use: todoController.index)
     router.post("todos", use: todoController.create)
     router.post("todos", Todo.parameter , "update", use: todoController.update)
     router.get("helloleaf"){ req -> Future<View> in
         return try req.view().render("home",["name":"Leaf"])
         
     }
+    router.post("json", use: todoController.json)
+   // router.delete("todos",Int.parameter, use: todoController.delete)
+    //router.delete("todos",Int.parameter,use: todoController.delete1)
   
     
 }
